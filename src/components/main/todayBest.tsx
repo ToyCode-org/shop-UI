@@ -9,9 +9,10 @@ import { PrevArrow, NextArrow } from "../common/prevNextArrow";
 import { Container, SessionHead, ItemInfo } from "../common/style";
 
 export const TodayBest = () => {
-  const arrowHandler = useBooleanHandler();
+  const { inView } = useComponentViewCheck("todayBest");
   const { windowWidth } = useResizeWidth();
   const { thisMedia } = useResponsive();
+  const arrowHandler = useBooleanHandler();
   const BestItemsWidth =
     ((windowWidth - 10 * (thisMedia - 1)) * 0.9) / thisMedia;
 
@@ -21,7 +22,33 @@ export const TodayBest = () => {
     setNavSelect(index);
   };
 
-  const { inView } = useComponentViewCheck("todayBest");
+  const itemsLengthInCategory = bestItemsArray[navSelect].length;
+  const sliderWidth = itemsLengthInCategory * windowWidth;
+  const [slideState, setSlideState] = useState({
+    imageNum: 1,
+    indexPx: -0,
+  });
+
+  const moveIndexPx = (BestItemsWidth + 10) * thisMedia;
+  const prevBtn = () => {
+    if (slideState.imageNum !== 1) {
+      setSlideState((prev) => ({
+        ...prev,
+        imageNum: prev.imageNum - 1,
+        indexPx: prev.indexPx + moveIndexPx,
+      }));
+    }
+  };
+  const nextBtn = () => {
+    if (slideState.imageNum !== Math.ceil(itemsLengthInCategory / thisMedia)) {
+      setSlideState((prev) => ({
+        ...prev,
+        imageNum: prev.imageNum + 1,
+        indexPx: prev.indexPx - moveIndexPx,
+      }));
+    }
+  };
+  const forceTrue = true;
   return (
     <Container
       style={
@@ -44,36 +71,47 @@ export const TodayBest = () => {
           );
         })}
       </BestItemNav>
-      <BestItemSlider
+      <SlideWrap
         onMouseEnter={() => arrowHandler.handler(true)}
         onMouseLeave={() => arrowHandler.handler(false)}
       >
-        {bestItemsArray[navSelect].map((item, index) => {
-          return (
-            <BestItem key={index} style={{ width: `${BestItemsWidth}px` }}>
-              <ImageWrap>
-                <BestItemImg
-                  src={item}
-                  alt="item"
-                  style={{ width: `${BestItemsWidth}px` }}
-                />
-              </ImageWrap>
-              <ItemInfo brand="Brand" itemName="Item Name" price="300,000" />
-            </BestItem>
-          );
-        })}
-        {arrowHandler.isTrue ? (
+        <BestItemSlider
+          style={{
+            width: `${sliderWidth}`,
+            transform: `translateX(${slideState.indexPx}px)`,
+          }}
+        >
+          {bestItemsArray[navSelect].map((item, index) => {
+            return (
+              <BestItem key={index} style={{ width: `${BestItemsWidth}px` }}>
+                <ImageWrap>
+                  <BestItemImg
+                    src={item}
+                    alt="item"
+                    style={{ width: `${BestItemsWidth}px` }}
+                  />
+                </ImageWrap>
+                <ItemInfo brand="Brand" itemName="Item Name" price="300,000" />
+              </BestItem>
+            );
+          })}
+        </BestItemSlider>
+        {forceTrue ? (
           <>
-            <PrevArrow style={{ transform: "translateY(400%)" }} />
+            <PrevArrow
+              style={{ transform: "translateY(-440px)" }}
+              onClick={prevBtn}
+            />
             <NextArrow
               style={{
-                transform: "translateY(400%)",
+                transform: "translateY(-440px)",
                 right: `5%`,
               }}
+              onClick={nextBtn}
             />
           </>
         ) : null}
-      </BestItemSlider>
+      </SlideWrap>
     </Container>
   );
 };
@@ -95,15 +133,17 @@ const BestItemCategory = styled.button`
   user-select: none;
 `;
 
+const SlideWrap = styled.div`
+  overflow: hidden;
+`;
 const BestItemSlider = styled.div`
   display: flex;
   height: 660px;
-  overflow: hidden;
+  transition: 0.6s;
 `;
 const BestItem = styled.div`
-  width: 330px;
-  height: 670px;
   margin-right: 10px;
+  height: 670px;
   cursor: pointer;
 `;
 
@@ -114,7 +154,6 @@ const ImageWrap = styled.div`
   background-color: #f1f1f1;
 `;
 const BestItemImg = styled.img`
-  width: 330px;
   height: 330px;
   object-fit: cover;
 `;

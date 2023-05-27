@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 150px auto;
-  width: 90vw;
+  width: 90%;
   transition: 1s;
 `;
 
