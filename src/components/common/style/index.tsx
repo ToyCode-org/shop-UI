@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin: 100px auto;
   width: 90vw;
+  transition: 0.6s;
 `;
 
 export const SessionHead = styled.h2`

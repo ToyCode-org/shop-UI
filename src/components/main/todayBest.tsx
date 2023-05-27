@@ -21,8 +21,13 @@ export const TodayBest = () => {
     setNavSelect(index);
   };
 
+  const getContainerPosition = () => {
+    const el = document.getElementById("todayBest");
+    console.log(el?.offsetHeight);
+  };
+
   return (
-    <Container>
+    <Container id="todayBest" onClick={getContainerPosition}>
       <SessionHead>Today Best</SessionHead>
       <BestItemNav>
         {navItems.map((item, index) => {

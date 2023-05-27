@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { slideImages } from "./mainMockData";
 import { useResizeWidth } from "../../hooks/useResizeWidth";
 import { useBooleanHandler } from "../../hooks/useBooleanHandler";
 import { PrevArrow, NextArrow } from "../common/prevNextArrow";
+import { EventTimer } from "./eventTimer";
 
 export const EventSlider = () => {
   const { windowWidth } = useResizeWidth();
@@ -91,6 +92,23 @@ export const EventSlider = () => {
     }, 700);
   };
 
+  const [slideTimer, setSlideTimer] = useState(0);
+  const slideTimerInterval = () => {
+    setSlideTimer((prev) => prev + 1);
+  };
+  useEffect(() => {
+    const intervalId = setInterval(slideTimerInterval, 4000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (slideTimer !== 0) {
+      nextBtn();
+    }
+  }, [slideTimer]);
+
   return (
     <SlideWrap
       onMouseEnter={() => arrowHandler.handler(true)}
@@ -127,6 +145,7 @@ export const EventSlider = () => {
           />
         </>
       ) : null}
+      <EventTimer imageNum={slideState.imageNum} />
     </SlideWrap>
   );
 };

@@ -12,7 +12,7 @@ export const HeaderBottomMain = [
   "Life",
 ];
 
-export const HeaderBottomSide = ["리포메이션", "이벤트", "아울렛"];
+export const HeaderBottomSide = ["NewBrand", "이벤트", "아울렛"];
 
 export const footerCustomerMenu = ["고객센터", "공지사항", "카톡상담", "ARS"];
 export const footerBootomMockData = [

@@ -12,11 +12,12 @@ export const TimeProgressBar = () => {
   const currentDateHandler = () => {
     setCurrentDate(+new Date());
   };
-  const currentDateInterval = () => {
-    setInterval(currentDateHandler, 1000);
-  };
+
   useEffect(() => {
-    currentDateInterval();
+    const intervalId = setInterval(currentDateHandler, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return (
