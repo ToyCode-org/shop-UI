@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 100px auto;
+  margin: 150px auto;
   width: 90vw;
-  transition: 0.6s;
+  transition: 1s;
 `;
 
 export const SessionHead = styled.h2`

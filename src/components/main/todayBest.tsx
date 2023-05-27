@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { bestItemsArray } from "./mainMockData";
+import { navItems, bestItemsArray } from "./mainMockData";
 import { useResizeWidth } from "../../hooks/useResizeWidth";
 import { useResponsive } from "../../hooks/useResponsive";
 import { useBooleanHandler } from "../../hooks/useBooleanHandler";
+import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
 import { PrevArrow, NextArrow } from "../common/prevNextArrow";
 import { Container, SessionHead, ItemInfo } from "../common/style";
 
@@ -15,20 +16,21 @@ export const TodayBest = () => {
     ((windowWidth - 10 * (thisMedia - 1)) * 0.9) / thisMedia;
 
   const [navSelect, setNavSelect] = useState(0);
-  const navItems = ["전체", "뷰티", "여성의류", "남성의류"];
 
   const contentHandler = (index: number) => {
     setNavSelect(index);
   };
 
-  const getContainerPosition = () => {
-    const el = document.getElementById("todayBest");
-    console.log(el?.offsetHeight);
-  };
-
+  const { inView } = useComponentViewCheck("todayBest");
   return (
-    <Container id="todayBest" onClick={getContainerPosition}>
-      <SessionHead>Today Best</SessionHead>
+    <Container
+      style={
+        inView
+          ? { opacity: "1", paddingTop: "0px" }
+          : { opacity: "0", paddingTop: "100px" }
+      }
+    >
+      <SessionHead id="todayBest">Today Best</SessionHead>
       <BestItemNav>
         {navItems.map((item, index) => {
           return (

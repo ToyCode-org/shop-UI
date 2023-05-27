@@ -2,14 +2,22 @@ import styled from "styled-components";
 import { Container, SessionHead, ItemInfo } from "../common/style";
 import { PublicImage } from "../../util/publicImage";
 import { TimeProgressBar } from "./hotDealProgressBar";
+import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
 
 export const HotDeal = () => {
+  const { inView } = useComponentViewCheck("hotDeal");
   return (
-    <Container>
+    <Container
+      style={
+        inView
+          ? { opacity: "1", paddingTop: "0px" }
+          : { opacity: "0", paddingTop: "100px" }
+      }
+    >
       <SessionHead>
         <span>HOT DEAL</span>
       </SessionHead>
-      <Content>
+      <Content id="hotDeal">
         <img src={PublicImage("nest")} alt="hot-deal-item" />
         <HotDealInfo>
           <ItemInfo brand="Brand" itemName="Item Name" price="288,900" />

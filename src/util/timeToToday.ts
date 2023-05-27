@@ -30,5 +30,8 @@ export const restDate = (currentDate: number, endDate: number) => {
   s -= h * hour;
   const m = Math.floor(s / minuetes);
   s -= m * minuetes;
-  return `${M}개월 ${d}일 ${h} : ${m} : ${Math.floor(s)} 남음`;
+  s = Math.floor(s);
+  return `${M}개월 ${d}일 ${h < 10 ? "0" + h : h} : ${m < 10 ? "0" + m : m} : ${
+    s < 10 ? "0" + s : s
+  } 남음`;
 };
