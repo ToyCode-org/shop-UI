@@ -14,6 +14,8 @@ export const HeaderBottomMain = [
 
 export const HeaderBottomSide = ["NewBrand", "이벤트", "아울렛"];
 
+export const mobileHeaderNav = ["Home", "Event", "Deak", "Best"];
+
 export const footerCustomerMenu = ["고객센터", "공지사항", "카톡상담", "ARS"];
 export const footerBootomMockData = [
   "ABOUT",

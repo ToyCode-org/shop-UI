@@ -3,17 +3,27 @@ import { PublicImage } from "../../util/publicImage";
 import { HeaderTopMenu } from "./headerTop";
 import { HeaderSearchInput } from "./searchInput";
 import { HeaderBottom } from "./headerBottom";
+import { useResponsive } from "../../hooks/useResponsive";
+import { MobileHeaders } from "./mobile/mobileHeaders";
 
 export const Headers = () => {
+  const { thisMedia } = useResponsive();
+
   return (
     <HeaderContainer>
-      <BannerImg src={PublicImage("next")} alt="header-banner" />
-      <HeaderTop>
-        <Logo src={PublicImage("nest")} alt="logo" />
-        <HeaderSearchInput />
-        <HeaderTopMenu />
-      </HeaderTop>
-      <HeaderBottom />
+      {thisMedia === 4 ? (
+        <>
+          <BannerImg src={PublicImage("next")} alt="header-banner" />
+          <HeaderTop>
+            <Logo src={PublicImage("nest")} alt="logo" />
+            <HeaderSearchInput />
+            <HeaderTopMenu />
+          </HeaderTop>
+          <HeaderBottom />
+        </>
+      ) : (
+        <MobileHeaders />
+      )}
     </HeaderContainer>
   );
 };

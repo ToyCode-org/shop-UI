@@ -36,9 +36,9 @@ export const RecommendItem = () => {
         )`,
         }}
       >
-        <CardBox id="recommentItem">
+        <CardBox>
           <ItemInfo>
-            <h2>Recommend Item</h2>
+            <h2 id="recommentItem">Recommend Item</h2>
             <p>Brand Name</p>
             <span>productName</span>
           </ItemInfo>
