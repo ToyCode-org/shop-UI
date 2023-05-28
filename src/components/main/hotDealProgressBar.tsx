@@ -75,5 +75,11 @@ const StatusMsg = styled.div`
     font-size: 25px;
     margin-right: 10px;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 0.7rem;
+    & svg {
+      margin-left: 5px;
+    }
+  }
 `;
 const Msg = styled.div``;

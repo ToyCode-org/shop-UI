@@ -43,7 +43,7 @@ export const SideMenu = ({ menuHandler }: Props) => {
 };
 
 const MenuContainer = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: white;

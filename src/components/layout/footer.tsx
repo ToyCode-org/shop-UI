@@ -60,6 +60,11 @@ const FooterTop = styled.div`
   & span {
     margin: 0 5px;
   }
+  @media screen and (max-width: 767px) {
+    height: max-content;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `;
 const Number = styled.span`
   font-weight: bold;
@@ -74,7 +79,16 @@ const CustomersItem = styled.span`
   font-weight: bolder;
   cursor: pointer;
 `;
-const FooterTopLeft = styled.div``;
+const FooterTopLeft = styled.div`
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+
+    & span {
+      margin-bottom: 5px;
+    }
+  }
+`;
 const FooterTopRight = styled.div`
   & svg {
     margin: 0 5px;
@@ -86,12 +100,19 @@ const FooterTopRight = styled.div`
 const FooterBottom = styled.div`
   height: 300px;
   background-color: #e4e4e4;
+  @media screen and (max-width: 767px) {
+    height: max-content;
+  }
 `;
 const FbFirst = styled.div`
   margin-left: 70px;
   height: 60px;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    font-size: 0.5rem;
+  }
 `;
 const ShopInfo = styled.span`
   margin: 0 15px;
@@ -105,5 +126,16 @@ const FbLast = styled.div`
   & span {
     margin: 10px 0;
     cursor: pointer;
+  }
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+    height: 60px;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: row;
+
+    & span {
+      margin: 0 15px;
+    }
   }
 `;

@@ -33,8 +33,12 @@ export const MobileHeaders = () => {
 };
 
 const HeaderContainer = styled.header`
+  position: fixed;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
 `;
 const CloseBtn = styled(GrClose)`
   position: absolute;

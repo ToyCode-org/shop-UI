@@ -11,10 +11,15 @@ export const Layout = ({ children }: Props) => {
   return (
     <LayoutContainer>
       <Headers />
-      {children}
+      <Content>{children}</Content>
       <Footer />
     </LayoutContainer>
   );
 };
 
 const LayoutContainer = styled.div``;
+const Content = styled.div`
+  @media screen and (max-width: 767px) {
+    margin-top: 168px;
+  }
+`;

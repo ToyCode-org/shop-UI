@@ -63,6 +63,12 @@ const CardBox = styled.div`
   justify-content: center;
   border: 5px solid #1b1515;
   background-color: white;
+
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+    flex-direction: column;
+    height: max-content;
+  }
 `;
 const ItemInfo = styled.div`
   width: 40%;
@@ -89,5 +95,10 @@ const ItemImg = styled.div`
     width: 100%;
     height: 50%;
     object-fit: cover;
+  }
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
   }
 `;
