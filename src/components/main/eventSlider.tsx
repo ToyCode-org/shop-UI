@@ -166,6 +166,6 @@ const ItemWrap = styled.div`
 const EventItem = styled.img`
   width: 100vw;
   height: 700px;
-  object-fit: cover;
+  object-fit: fill;
   cursor: pointer;
 `;
