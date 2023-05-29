@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { useState, useRef, useEffect } from "react";
-import { slideImages } from "./mainMockData";
-import { useResizeWidth } from "../../hooks/useResizeWidth";
-import { useBooleanHandler } from "../../hooks/useBooleanHandler";
-import { PrevArrow, NextArrow } from "../common/prevNextArrow";
+import { slideImages } from "../mainMockData";
+import { useResizeWidth } from "../../../hooks/useResizeWidth";
+import { useBooleanHandler } from "../../../hooks/useBooleanHandler";
+import { useResponsive } from "../../../hooks/useResponsive";
+import { PrevArrow, NextArrow } from "../../common/prevNextArrow";
 import { EventTimer } from "./eventTimer";
 
 export const EventSlider = () => {
+  const { thisMedia } = useResponsive();
   const { windowWidth } = useResizeWidth();
   const arrowHandler = useBooleanHandler();
 
@@ -133,7 +135,7 @@ export const EventSlider = () => {
           );
         })}
       </Slider>
-      {arrowHandler.isTrue ? (
+      {thisMedia < 4 || arrowHandler.isTrue ? (
         <>
           <PrevArrow
             style={{ transform: "translateY(-375px)" }}
@@ -145,7 +147,7 @@ export const EventSlider = () => {
           />
         </>
       ) : null}
-      <EventTimer imageNum={slideState.imageNum} />
+      <EventTimer />
     </SlideWrap>
   );
 };

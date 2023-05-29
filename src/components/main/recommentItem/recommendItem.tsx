@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { Container } from "../common/style";
-import { PublicImage } from "../../util/publicImage";
-import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
+import { Container } from "../../common/style";
+import { PublicImage } from "../../../util/publicImage";
+import { useComponentViewCheck } from "../../../hooks/useComponentViewCheck";
 
 export const RecommendItem = () => {
   const { inView } = useComponentViewCheck("recommentItem");

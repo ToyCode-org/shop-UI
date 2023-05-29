@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { restDate } from "../../util/timeToToday";
+import { restDate } from "../../../util/timeToToday";
 import { TbClockHour4 } from "react-icons/tb";
 
 export const TimeProgressBar = () => {

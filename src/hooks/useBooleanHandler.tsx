@@ -5,6 +5,7 @@ export const useBooleanHandler = () => {
   const booleanHandler = (bool: boolean) => {
     setIsTrue(bool);
   };
+
   return {
     isTrue,
     handler: booleanHandler,

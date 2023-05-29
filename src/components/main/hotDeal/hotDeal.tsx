@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Container, SessionHead, ItemInfo } from "../common/style";
-import { PublicImage } from "../../util/publicImage";
+import { Container, SessionHead, ItemInfo } from "../../common/style";
+import { PublicImage } from "../../../util/publicImage";
 import { TimeProgressBar } from "./hotDealProgressBar";
-import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
+import { useComponentViewCheck } from "../../../hooks/useComponentViewCheck";
 
 export const HotDeal = () => {
   const { inView } = useComponentViewCheck("hotDeal");

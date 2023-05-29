@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { EventSlider } from "../components/main/eventSlider";
-import { TodayBest } from "../components/main/todayBest";
-import { HotDeal } from "../components/main/hotDeal";
-import { RecommendItem } from "../components/main/recommendItem";
+import { EventSlider } from "../components/main/eventSlider/eventSlider";
+import { TodayBest } from "../components/main/todayBest/todayBest";
+import { HotDeal } from "../components/main/hotDeal/hotDeal";
+import { RecommendItem } from "../components/main/recommentItem/recommendItem";
 
 export const Main = () => {
   return (

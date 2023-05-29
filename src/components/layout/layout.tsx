@@ -19,7 +19,7 @@ export const Layout = ({ children }: Props) => {
 
 const LayoutContainer = styled.div``;
 const Content = styled.div`
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     margin-top: 168px;
   }
 `;

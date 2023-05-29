@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-  imageNum: number;
-}
-
-export const EventTimer = ({ imageNum }: Props) => {
+export const EventTimer = () => {
   return (
     <ProgressBar>
       <InnerProgress></InnerProgress>

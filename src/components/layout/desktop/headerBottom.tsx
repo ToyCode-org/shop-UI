@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeaderBottomMain, HeaderBottomSide } from "./layoutMockData";
+import { HeaderBottomMain, HeaderBottomSide } from "../layoutMockData";
 import { Link } from "react-router-dom";
 import { TbStarFilled } from "react-icons/tb";
 

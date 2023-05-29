@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { navItems, bestItemsArray } from "./mainMockData";
-import { useResizeWidth } from "../../hooks/useResizeWidth";
-import { useResponsive } from "../../hooks/useResponsive";
-import { useBooleanHandler } from "../../hooks/useBooleanHandler";
-import { useComponentViewCheck } from "../../hooks/useComponentViewCheck";
-import { PrevArrow, NextArrow } from "../common/prevNextArrow";
-import { Container, SessionHead, ItemInfo } from "../common/style";
+import { navItems, bestItemsArray } from "../mainMockData";
+import { useResizeWidth } from "../../../hooks/useResizeWidth";
+import { useResponsive } from "../../../hooks/useResponsive";
+import { useBooleanHandler } from "../../../hooks/useBooleanHandler";
+import { useComponentViewCheck } from "../../../hooks/useComponentViewCheck";
+import { PrevArrow, NextArrow } from "../../common/prevNextArrow";
+import { Container, SessionHead, ItemInfo } from "../../common/style";
 
 export const TodayBest = () => {
   const { inView } = useComponentViewCheck("todayBest");
@@ -48,7 +48,7 @@ export const TodayBest = () => {
       }));
     }
   };
-  const forceTrue = true;
+
   return (
     <Container
       style={
@@ -96,7 +96,7 @@ export const TodayBest = () => {
             );
           })}
         </BestItemSlider>
-        {forceTrue ? (
+        {thisMedia < 4 || arrowHandler.isTrue ? (
           <>
             <PrevArrow
               style={{ transform: "translateY(-440px)" }}
