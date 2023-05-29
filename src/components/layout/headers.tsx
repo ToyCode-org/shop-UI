@@ -13,9 +13,9 @@ export const Headers = () => {
     <HeaderContainer>
       {thisMedia === 4 ? (
         <>
-          <BannerImg src={PublicImage("next")} alt="header-banner" />
+          <BannerImg src={PublicImage("eventbanner")} alt="header-banner" />
           <HeaderTop>
-            <Logo src={PublicImage("nest")} alt="logo" />
+            <Logo src={PublicImage("shoplogo")} alt="logo" />
             <HeaderSearchInput />
             <HeaderTopMenu />
           </HeaderTop>
@@ -51,6 +51,6 @@ const HeaderTop = styled.div`
 const Logo = styled.img`
   width: 253px;
   height: 88px;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
 `;

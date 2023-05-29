@@ -9,7 +9,7 @@ interface Props {
 export const HeaderTop = ({ openMenu }: Props) => {
   return (
     <HeaderWrap>
-      <Logo src={PublicImage("nest")} alt="logo" />
+      <Logo src={PublicImage("shoplogo")} alt="logo" />
       <TopMenu>
         <TbSearch />
         <TbShoppingBag />

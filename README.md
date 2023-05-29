@@ -7,4 +7,7 @@ https://shop-ui-sage.vercel.app/
 Tools 🛠
 
 React
+
+TypeScript
+
 styled-components

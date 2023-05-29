@@ -43,7 +43,7 @@ export const RecommendItem = () => {
             <span>productName</span>
           </ItemInfo>
           <ItemImg>
-            <img src={PublicImage("nest")} alt="recomment Product" />
+            <img src={PublicImage("recommend-item")} alt="recomment Product" />
           </ItemImg>
         </CardBox>
       </CardOutline>

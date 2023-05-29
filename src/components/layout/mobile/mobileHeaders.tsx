@@ -22,7 +22,7 @@ export const MobileHeaders = () => {
   return (
     <HeaderContainer>
       <Banner id="banner">
-        <BannerImg src={PublicImage("next")} alt="header-banner" />
+        <BannerImg src={PublicImage("eventbanner")} alt="header-banner" />
         <CloseBtn onClick={closeBanner} />
       </Banner>
       <HeaderTop openMenu={openMenu} />

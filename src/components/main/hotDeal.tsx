@@ -18,7 +18,7 @@ export const HotDeal = () => {
         <span>HOT DEAL</span>
       </SessionHead>
       <Content id="hotDeal">
-        <img src={PublicImage("nest")} alt="hot-deal-item" />
+        <img src={PublicImage("recommend-item")} alt="hot-deal-item" />
         <HotDealInfo>
           <ItemInfo brand="Brand" itemName="Item Name" price="288,900" />
           <ProgressWrap>
