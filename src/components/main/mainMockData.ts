@@ -16,6 +16,6 @@ export const navItems = ["전체", "뷰티", "여성의류", "남성의류"];
 const bestOfAll = new Array(12).fill(PublicImage("bag"));
 const bestOfBeauty = new Array(12).fill(PublicImage("lipstick"));
 const bestOfWomen = new Array(12).fill(PublicImage("onepiece"));
-const bestOfMan = new Array(12).fill(PublicImage("jacekt"));
+const bestOfMan = new Array(12).fill(PublicImage("jacket"));
 
 export const bestItemsArray = [bestOfAll, bestOfBeauty, bestOfWomen, bestOfMan];
