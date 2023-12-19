@@ -5,7 +5,7 @@ import { TbClockHour4 } from "react-icons/tb";
 
 export const TimeProgressBar = () => {
   const startDate = +new Date("2022-01-01");
-  const endDate = +new Date("2023-12-31");
+  const endDate = +new Date("2024-12-31");
   const [currentDate, setCurrentDate] = useState(+new Date());
   const progress = ((currentDate - startDate) / (endDate - startDate)) * 100;
 
